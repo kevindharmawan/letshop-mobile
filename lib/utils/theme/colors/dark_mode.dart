@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class DarkMode {
+class DarkModeColor {
   static const primaryLow = Color(0xFF345FA2);
   static const primary = Color(0xFF4A87E8);
   static const primaryHigh = Color(0xFF80ABEF);
