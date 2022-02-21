@@ -1,4 +1,4 @@
 class StorageKeys {
-  static const isDarkMode = 'dark';
+  static const isDarkModeColor = 'dark';
   static const selectedLanguage = 'lang';
 }
