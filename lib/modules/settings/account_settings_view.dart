@@ -30,13 +30,15 @@ class AccountSettingsView extends StatelessWidget {
                       style: TextStyle(fontSize: FontSize.heading3),
                       textAlign: TextAlign.left,
                     ),
-                    Text(
-                      'Change your settings',
-                      style: TextStyle(fontSize: FontSize.subheading),
-                      textAlign: TextAlign.left,
-                    ),
-                  ],
-                ),
+                    GestureDetector(
+                      onTap: (){
+                        print("Tapped Change Your Settings");
+                      },
+                      child: Text(
+                        'Change your settings',
+                        style: TextStyle(fontSize: FontSize.subheading),
+                        textAlign: TextAlign.left,
+                      ))]),
                 Container(
                     height: Sizing.w(64),
                     width: Sizing.w(64),
@@ -59,9 +61,24 @@ class AccountSettingsView extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  SettingsButton('User Settings'),
-                  SettingsButton('Store Settings'),
-                  SettingsButton('Seller Mode'),
+                  GestureDetector(
+                    onTap: (){
+                      print("Tapped User Settings");
+                    },
+                    child: SettingsButton('User Settings'),
+                  ),
+                  GestureDetector(
+                    onTap: (){
+                      print("Tapped Store Settings");
+                    },
+                    child: SettingsButton('Store Settings'),
+                  ),
+                  GestureDetector(
+                    onTap: (){
+                      print("Tapped Seller Mode");
+                    },
+                    child: SettingsButton('Seller Mode'),
+                  ),
                 ],
               ),
             ),
@@ -72,9 +89,18 @@ class AccountSettingsView extends StatelessWidget {
               margin: EdgeInsets.symmetric(vertical: Sizing.h(10)),
               child: Column(
                 children: [
-                  SettingsButton('Shipping Address'),
-                  SettingsButton('???'),
-                ],
+                  GestureDetector(
+                    onTap: (){
+                      print("Tapped Shipping Address");
+                    },
+                    child: SettingsButton('Shipping Address'),
+                  ),
+                  GestureDetector(
+                    onTap: (){
+                      print("Tapped ???");
+                    },
+                    child: SettingsButton('???'),
+                  )],
               ),
             ),
             Container(
@@ -84,34 +110,46 @@ class AccountSettingsView extends StatelessWidget {
               margin: EdgeInsets.symmetric(vertical: Sizing.h(10)),
               child: Column(
                 children: [
-                  SettingsButton('Change Password'),
-                  Container(
-                      decoration: const BoxDecoration(
-                        border: Border(bottom: BorderSide(width: 1.0, color: Color(0x32000000))),
-                      ),
-                      padding: EdgeInsets.symmetric(
-                        horizontal: Sizing.w(5),
-                        vertical: Sizing.h(10),
-                      ),
-                      child: Row(
-                        children: [
-                          Container(
-                            margin: EdgeInsets.only(left: Sizing.w(8), right: Sizing.w(20)),
-                            child: Icon(
-                              logout,
-                              size: 30,
-                              color: themeController.error,
-                            )),
-                          Text(
-                            'Logout',
-                            textAlign: TextAlign.left,
-                            style: TextStyle(
-                                fontSize: FontSize.subheading,
-                                height: 1.5,
-                                color: themeController.error
-                            )),
-                        ],
-                      ))],
+                  GestureDetector(
+                    onTap: (){
+                      print("Tapped Change Password");
+                    },
+                    child: SettingsButton('Change Password')
+                  ),
+                  GestureDetector(
+                      onTap: (){
+                        print("Tapped Logout");
+                      },
+                      child: Container(
+                          decoration: const BoxDecoration(
+                            border: Border(bottom: BorderSide(width: 1.0, color: Color(0x32000000))),
+                          ),
+                          padding: EdgeInsets.symmetric(
+                            horizontal: Sizing.w(5),
+                            vertical: Sizing.h(10),
+                          ),
+                          child: Row(
+                            children: [
+                              Container(
+                                  margin: EdgeInsets.only(left: Sizing.w(8), right: Sizing.w(20)),
+                                  child: Icon(
+                                    logout,
+                                    size: 30,
+                                    color: themeController.error,
+                                  )),
+                              Text(
+                                  'Logout',
+                                  textAlign: TextAlign.left,
+                                  style: TextStyle(
+                                      fontSize: FontSize.subheading,
+                                      height: 1.5,
+                                      color: themeController.error
+                                  )),
+                            ]
+                          )
+                      )
+                  ),
+                ],
               ),
             ),
           ],
