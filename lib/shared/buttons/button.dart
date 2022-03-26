@@ -4,11 +4,13 @@ import 'package:letshop_mobile/utils/device/sizing.dart';
 
 class Button extends StatelessWidget {
 
-  final Function onPress;
+  final Function() onPress;
+  final String text;
 
   const Button({
     Key? key,
-    required this.onPress
+    required this.onPress,
+    required this.text
   }) : super(key: key);
 
   @override
@@ -22,9 +24,9 @@ class Button extends StatelessWidget {
           horizontal: Sizing.w(16),
         ),
       ),
-      onPressed: () {},
+      onPressed: onPress,
       child: Text(
-        'Login',
+        text,
         style: TextStyle(
             fontSize: FontSize.bodyRegular
         ),

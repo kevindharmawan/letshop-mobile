@@ -2,14 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:letshop_mobile/utils/constants/font_size.dart';
 import 'package:letshop_mobile/utils/device/sizing.dart';
 
-
-
 class SocialButton extends StatelessWidget {
-  final Function onPress;
+
+  final Function() onPress;
+  final String text;
+  final String imageUrl;
 
   const SocialButton({
     Key? key,
     required this.onPress,
+    required this.text,
+    required this.imageUrl,
+
   }) : super(key: key);
 
   @override
@@ -22,10 +26,10 @@ class SocialButton extends StatelessWidget {
           horizontal: Sizing.w(16),
         ),
       ),
-      onPressed: (){},
-      icon: Image.network('https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png', height: Sizing.h(16),width: Sizing.w(16),),
+      onPressed: onPress,
+      icon: Image.network(imageUrl, height: Sizing.h(16),width: Sizing.w(16),),
       label: Text(
-        'Login with Google',
+        text,
         style: TextStyle(
             fontSize: FontSize.bodyRegular
         ),
