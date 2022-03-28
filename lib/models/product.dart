@@ -1,4 +1,5 @@
 import 'package:letshop_mobile/models/store.dart';
+import 'package:letshop_mobile/models/review.dart';
 
 class Product {
   String? id;
@@ -10,6 +11,9 @@ class Product {
   int? price;
   int? stock;
   int? discount;
+  int? rate;
+  List<review>? listReview;
+  int? sold;
 
   Product(
       {this.id,
