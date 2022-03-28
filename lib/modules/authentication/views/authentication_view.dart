@@ -9,6 +9,8 @@ import 'package:letshop_mobile/shared/cards/product_card.dart';
 import 'package:letshop_mobile/utils/constants/_constants.dart';
 import 'package:letshop_mobile/utils/device/sizing.dart';
 
+import 'package:letshop_mobile/shared/appbars/bottom_bar.dart';
+
 class AuthenticationView extends BaseStateless {
   const AuthenticationView({Key? key}) : super(key: key);
 
@@ -22,7 +24,7 @@ class AuthenticationView extends BaseStateless {
 
   @override
   Widget? buildBottomBar(BuildContext context) {
-    return null;
+    return BottomBar();
   }
 
   @override
