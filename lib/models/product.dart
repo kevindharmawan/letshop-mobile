@@ -12,7 +12,7 @@ class Product {
   int? stock;
   int? discount;
   int? rate;
-  List<review>? listReview;
+  List<Review>? listReview;
   int? sold;
 
   Product(

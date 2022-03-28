@@ -21,8 +21,7 @@ class HomeView extends BaseStateless {
 
   @override
   Widget buildNarrow(BuildContext context) {
-    // TODO: implement buildNarrow
-    throw UnimplementedError();
+    return Text('HOME');
   }
 
   @override
