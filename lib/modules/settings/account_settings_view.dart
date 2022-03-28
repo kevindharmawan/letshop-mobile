@@ -5,7 +5,6 @@ import 'package:letshop_mobile/utils/constants/font_size.dart';
 import 'package:letshop_mobile/utils/device/sizing.dart';
 import 'package:letshop_mobile/utils/theme/theme_constant.dart';
 
-
 class AccountSettingsView extends StatelessWidget {
 
   IconData logout = IconData(0xe3b3, fontFamily: 'MaterialIcons');
