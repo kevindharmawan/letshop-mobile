@@ -16,7 +16,7 @@ class AppPages {
     ),
     GetPage(
       name: AppRoutes.auth,
-      page: () => const AuthenticationView(),
+      page: () => AuthenticationView(),
       binding: AuthenticationBinding(),
       children: [
         GetPage(
