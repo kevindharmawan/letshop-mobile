@@ -18,6 +18,7 @@ abstract class BaseStateless extends StatelessWidget implements BasePage {
 
   @override
   Widget build(BuildContext context) {
+    init();
     return WillPopScope(
       child: Scaffold(
         appBar: buildAppBar(context),

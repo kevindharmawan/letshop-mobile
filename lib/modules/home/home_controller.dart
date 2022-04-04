@@ -5,13 +5,7 @@ import 'package:letshop_mobile/models/product.dart';
 import 'package:letshop_mobile/services/api_provider.dart';
 
 class HomeController extends GetxController {
-  late ApiProvider _provider;
-
-  @override
-  void onInit() {
-    super.onInit();
-    _provider = ApiProvider();
-  }
+  final ApiProvider _provider = Get.find<ApiProvider>();
 
   Future<List<Product>> getRecommendedProduct() async {
     return _provider.getRecommendedProduct();

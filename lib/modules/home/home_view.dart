@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:letshop_mobile/modules/home/home_controller.dart';
 import 'package:letshop_mobile/shared/appbars/empty_app_bar.dart';
 import 'package:letshop_mobile/shared/bases/base_stateless.dart';
 import 'package:letshop_mobile/utils/device/sizing.dart';
 import 'package:letshop_mobile/utils/constants/_constants.dart';
-
-import 'package:letshop_mobile/utils/device/sizing.dart';
 import 'package:letshop_mobile/utils/theme/theme_constant.dart';
 import 'package:letshop_mobile/utils/routes/_routes.dart';
-import 'package:letshop_mobile/modules/settings/account_settings_view.dart';
 
 int currentIndex = 0;
 
 class HomeView extends BaseStateless {
-  const HomeView({Key? key}) : super(key: key);
+  HomeView({Key? key}) : super(key: key);
+
+  final _homeController = Get.find<HomeController>();
 
   @override
   void init() {}
@@ -24,7 +25,6 @@ class HomeView extends BaseStateless {
 
   @override
   Widget? buildBottomBar(BuildContext context) {
-
     return BottomNavigationBar(
       currentIndex: 0,
       type: BottomNavigationBarType.fixed,
@@ -62,7 +62,7 @@ class HomeView extends BaseStateless {
   @override
   Widget buildNarrow(BuildContext context) {
     return Column(
-      children:[
+      children: [
         Container(
           margin: const EdgeInsets.only(left: 28, right: 28),
           child: Container(
@@ -77,38 +77,32 @@ class HomeView extends BaseStateless {
                     height: Sizing.h(2),
                   ),
                 ),
-                InkWell( //TODO: Implement see all
+                InkWell(
+                  //TODO: Implement see all
                   child: Text(
                     'see all',
                     style: TextStyle(
                       fontSize: FontSize.bodyRegular,
                       color: Colors.blue,
                       height: Sizing.h(2),
-                    ),),
+                    ),
+                  ),
                   onTap: () {},
                 ),
               ],
             ),
           ),
-
-
         ),
         Container(
           margin: const EdgeInsets.only(left: 20),
           height: Sizing.h(200),
-          child:ListView(
-            scrollDirection:Axis.horizontal,
-            children: [ // Input the recommended using product card
-              // ProductCard(
-              //     product: Product(
-              //       name: 'Shoes',
-              //     )),
-            ],
+          child: ListView(
+            scrollDirection: Axis.horizontal,
+            children: [],
+            // TODO: Use get recommended from controller, use future builder, and implement loading state
           ),
         ),
-
         Container(
-
           margin: const EdgeInsets.only(left: 28, right: 28),
           child: Container(
             child: Row(
@@ -122,35 +116,31 @@ class HomeView extends BaseStateless {
                     height: Sizing.h(2),
                   ),
                 ),
-                InkWell( //TODO: Implement see all
+                InkWell(
+                  //TODO: Implement see all
                   child: Text(
                     'see all',
                     style: TextStyle(
                       fontSize: FontSize.bodyRegular,
                       color: Colors.blue,
                       height: Sizing.h(2),
-                    ),),
+                    ),
+                  ),
                   onTap: () {},
                 ),
               ],
             ),
           ),
-
-
         ),
         Container(
           margin: const EdgeInsets.only(left: 20.0),
           height: Sizing.h(200),
-          child:ListView(
-            scrollDirection:Axis.horizontal,
-            children: [ // Input the category using product card
-
-            ],
+          child: ListView(
+            scrollDirection: Axis.horizontal,
+            children: [],
+            // TODO: Use get recommended from controller, use future builder, and implement loading state
           ),
         ),
-
-
-
       ],
     );
   }
