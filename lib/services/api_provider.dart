@@ -5,12 +5,16 @@ import 'package:get/get_connect/http/src/request/request.dart';
 import 'package:letshop_mobile/models/product.dart';
 
 class ApiProvider extends GetConnect {
-  static const String host = 'https://letshop-backend.herokuapp.com/api/';
-  static const String _token = '';
+  late String _token = '';
+
+  static const String _host = 'https://letshop-backend.herokuapp.com/api/';
+  static const String _productPath = 'product/';
 
   @override
-  void onInit() {
-    httpClient.baseUrl = host;
+  void onInit() async {
+    _token = await FirebaseAuth.instance.currentUser!.getIdToken(true);
+
+    httpClient.baseUrl = _host;
     httpClient.defaultContentType = 'application/json';
 
     httpClient.addRequestModifier((Request request) {
@@ -22,8 +26,11 @@ class ApiProvider extends GetConnect {
   }
 
   Future<List<Product>> getRecommendedProduct() async {
-    // TODO: Implement
-    return [];
+    var response = await get(_productPath + 'get');
+    var responseList = response.body['data'] as List;
+    return responseList
+        .map((productJson) => Product.fromJson(productJson))
+        .toList();
   }
 
   Future<List<Category>> getRecommendedCategory() async {

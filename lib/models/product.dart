@@ -24,4 +24,15 @@ class Product {
       this.price,
       this.stock,
       this.discount});
+
+  factory Product.fromJson(Map<String, dynamic> json) {
+    return Product(
+      id: json['id'].toString(),
+      name: json['name'],
+      description: json['description'],
+      price: json['price'],
+      stock: json['stock'],
+      discount: json['discount'],
+    );
+  }
 }
