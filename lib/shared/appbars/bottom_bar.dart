@@ -24,8 +24,9 @@ class _BottomBar extends State<BottomBar> {
       unselectedFontSize: Sizing.h(10),
       onTap: (index) {
         setState(() {
-          Get.offNamed(AppRoutes.home);
           _currentIndex = index;
+          if(_currentIndex == 0) Get.offNamed(AppRoutes.home);
+          else if(_currentIndex == 3) Get.offNamed(AppRoutes.auth);
         });
       },
       items: [
