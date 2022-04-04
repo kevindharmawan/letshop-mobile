@@ -27,22 +27,38 @@ class AuthenticationView extends BaseStateless {
 
   @override
   Widget buildNarrow(BuildContext context) {
-    return Column(
+    const title = 'Recommended';
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(title),
+      ),
+      body: GridView.count(
+          crossAxisCount: 2,
+          children: [
+            ProductCard(
+                product: Product(
+                  name: 'Shoes',
+                )),
+            ProductCard(
+                product: Product(
+                  name: 'Shoes',
+                )),
+            ProductCard(
+                product: Product(
+                  name: 'Shoes',
+                )),
+            ProductCard(
+                product: Product(
+                  name: 'Shoes',
+                )),
+            ProductCard(
+                product: Product(
+                  name: 'Shoes',
+                )),
 
-      children: [
-        Text(
-          'example'.tr,
-        ),
-        ProductCard(
-            product: Product(
-              name: 'Shoes',
-            )),
-        ProductCard(
-            product: Product(
-              name: 'Shoes',
-            )),
-      ],
+          ],
 
+      ),
     );
 
 
