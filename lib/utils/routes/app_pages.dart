@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:letshop_mobile/modules/authentication/_authentication.dart';
 import 'package:letshop_mobile/modules/home/_home.dart';
+import 'package:letshop_mobile/modules/home/home_binding.dart';
 import 'package:letshop_mobile/modules/splash/_splash.dart';
 
 part 'app_routes.dart';
@@ -16,7 +17,7 @@ class AppPages {
     ),
     GetPage(
       name: AppRoutes.auth,
-      page: () => const AuthenticationView(),
+      page: () => AuthenticationView(),
       binding: AuthenticationBinding(),
       children: [
         GetPage(
@@ -35,7 +36,8 @@ class AppPages {
     ),
     GetPage(
       name: AppRoutes.home,
-      page: () => const HomeView(),
+      page: () => HomeView(),
+      binding: HomeBinding(),
     ),
   ];
 }
