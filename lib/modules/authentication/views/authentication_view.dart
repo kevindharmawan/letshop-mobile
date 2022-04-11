@@ -5,6 +5,7 @@ import 'package:letshop_mobile/shared/appbars/empty_app_bar.dart';
 import 'package:letshop_mobile/shared/bases/base_stateless.dart';
 import 'package:letshop_mobile/shared/cards/product_card.dart';
 import '../../../shared/input/Input.dart';
+import '../../../shared/input/LoginPage.dart';
 
 class AuthenticationView extends BaseStateless {
   const AuthenticationView({Key? key}) : super(key: key);
@@ -38,11 +39,12 @@ class AuthenticationView extends BaseStateless {
 
 
     return Container(
-      child: Input(),
+      child: LoginPage(),
     );
   }
 
-  @override
+
+@override
   Widget buildWide(BuildContext context) {
     return buildNarrow(context);
   }
