@@ -23,7 +23,7 @@ class InputWrapper extends StatelessWidget {
           Container(
             alignment: Alignment.bottomLeft,
               margin: new EdgeInsets.symmetric( horizontal: 50.0),
-             child: Text("Forgot Password?",
+             child: Text("Forgot your password?",
                style: TextStyle(color: Colors.lightBlue),
              )
           ),
