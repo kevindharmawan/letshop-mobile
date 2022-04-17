@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "443756902981",
+    "project_id": "letshop-2629c",
+    "storage_bucket": "letshop-2629c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:443756902981:android:a884557be438d5cf74c12c",
+        "android_client_info": {
+          "package_name": "com.letshop.mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "443756902981-55kd3d45qpemej6tsdoqmlvq2mn6os2g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzluidyEg_KS0N2bqa1-4-ylU7Ui7xcxI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "443756902981-55kd3d45qpemej6tsdoqmlvq2mn6os2g.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "443756902981-fsllglmg6ah4ofbfoguesdqvsmsq3593.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.letshop.mobile"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

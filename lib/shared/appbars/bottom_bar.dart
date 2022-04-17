@@ -9,13 +9,14 @@ class BottomBar extends StatefulWidget {
   _BottomBar createState() => _BottomBar();
 }
 
+int currentIndex = 0;
+
 class _BottomBar extends State<BottomBar> {
-  int _currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      currentIndex: _currentIndex,
+      currentIndex: currentIndex,
       type: BottomNavigationBarType.fixed,
       backgroundColor: themeController.elevated,
       selectedItemColor: themeController.primary,
@@ -24,9 +25,9 @@ class _BottomBar extends State<BottomBar> {
       unselectedFontSize: Sizing.h(10),
       onTap: (index) {
         setState(() {
-          _currentIndex = index;
-          if(_currentIndex == 0) Get.offNamed(AppRoutes.home);
-          else if(_currentIndex == 3) Get.offNamed(AppRoutes.auth);
+          currentIndex = index;
+          if(currentIndex == 0) Get.offNamed(AppRoutes.home);
+          else if(currentIndex == 3) Get.offNamed(AppRoutes.settings);
         });
       },
       items: [

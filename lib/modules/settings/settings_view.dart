@@ -1,17 +1,12 @@
 import 'package:flutter/material.dart';
-
 import 'package:letshop_mobile/shared/appbars/empty_app_bar.dart';
 import 'package:letshop_mobile/shared/bases/base_stateless.dart';
 import 'package:letshop_mobile/shared/appbars/bottom_bar.dart';
-
 import 'package:letshop_mobile/modules/settings/account_settings_view.dart';
-import 'package:letshop_mobile/modules/settings/user_settings_view.dart';
 
-class AuthenticationView extends BaseStateless {
-  const AuthenticationView({Key? key}) : super(key: key);
+class SettingsView extends BaseStateless{
 
-  @override
-  void init() {}
+  const SettingsView({Key? key}) : super(key: key);
 
   @override
   PreferredSizeWidget buildAppBar(BuildContext context) {
@@ -25,7 +20,12 @@ class AuthenticationView extends BaseStateless {
 
   @override
   Widget buildNarrow(BuildContext context) {
-    return UserSettingsView();
+    return AccountSettingsView();
+  }
+
+  @override
+  void init() {
+    // TODO: implement init
   }
 
   @override
@@ -37,5 +37,5 @@ class AuthenticationView extends BaseStateless {
   Future<bool> onBackPressed() async {
     return true;
   }
+  
 }
-
