@@ -3,6 +3,9 @@ import 'package:letshop_mobile/modules/authentication/_authentication.dart';
 import 'package:letshop_mobile/modules/home/_home.dart';
 import 'package:letshop_mobile/modules/home/home_binding.dart';
 import 'package:letshop_mobile/modules/splash/_splash.dart';
+import 'package:letshop_mobile/modules/settings/user_settings_view.dart';
+import '../../modules/home/see_all_category.dart';
+import '../../modules/home/see_all_recommended.dart';
 
 part 'app_routes.dart';
 
@@ -38,6 +41,19 @@ class AppPages {
       name: AppRoutes.home,
       page: () => HomeView(),
       binding: HomeBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.userSettings,
+      page: () => UserSettingsView(),
+    ),
+
+    GetPage(
+      name: AppRoutes.recommended,
+      page: () => AllRecommended(),
+    ),
+    GetPage(
+      name: AppRoutes.category,
+      page: () => AllCategory(),
     ),
   ];
 }

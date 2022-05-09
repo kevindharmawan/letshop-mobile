@@ -10,4 +10,9 @@ class AppRoutes {
   static const forget = '/forget';
 
   static const home = '/home';
+
+  static const userSettings = '/userSettings';
+
+  static const recommended = '/recommended';
+  static const category = '/category';
 }

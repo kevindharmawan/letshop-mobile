@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:get/get.dart';
 import 'package:letshop_mobile/models/product.dart';
 import 'package:letshop_mobile/modules/authentication/authentication_controller.dart';
@@ -13,6 +14,15 @@ import 'dart:async';
 
 import 'package:letshop_mobile/modules/home/home_controller.dart';
 
+
+
+
+import 'package:letshop_mobile/shared/appbars/empty_app_bar.dart';
+import 'package:letshop_mobile/shared/bases/base_stateless.dart';
+import 'package:letshop_mobile/shared/appbars/bottom_bar.dart';
+
+import 'package:letshop_mobile/modules/settings/account_settings_view.dart';
+import 'package:letshop_mobile/modules/settings/user_settings_view.dart';
 
 
 class AuthenticationView extends BaseStateless {
@@ -32,28 +42,14 @@ class AuthenticationView extends BaseStateless {
 
   @override
   Widget? buildBottomBar(BuildContext context) {
-    return null;
+    return BottomBar();
   }
 
   @override
   Widget buildNarrow(BuildContext context) {
-    const title = 'Recommended';
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(title),
-      ),
-      body: GridView.count(
-          crossAxisCount: 2,
-          children: [
-
-          ],
-
-      ),
-
-    );
 
 
-
+    return UserSettingsView();
   }
 
   @override
