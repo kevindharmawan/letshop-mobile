@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 
+import 'package:get/get.dart';
+import 'package:letshop_mobile/modules/authentication/authentication_controller.dart';
 import 'package:letshop_mobile/shared/appbars/empty_app_bar.dart';
 import 'package:letshop_mobile/shared/bases/base_stateless.dart';
 import 'package:letshop_mobile/shared/appbars/bottom_bar.dart';
 
-import 'package:letshop_mobile/modules/settings/account_settings_view.dart';
-import 'package:letshop_mobile/modules/settings/user_settings_view.dart';
 
 class AuthenticationView extends BaseStateless {
-  const AuthenticationView({Key? key}) : super(key: key);
+  AuthenticationView({Key? key}) : super(key: key);
 
   @override
   void init() {}
+
+  final _authController = Get.find<AuthenticationController>();
 
   @override
   PreferredSizeWidget buildAppBar(BuildContext context) {
@@ -25,7 +27,24 @@ class AuthenticationView extends BaseStateless {
 
   @override
   Widget buildNarrow(BuildContext context) {
-    return UserSettingsView();
+    return Column(
+
+      children: [
+        Text(
+          'example'.tr,
+          style: TextStyle(
+            color: themeController.error,
+          ),
+        ),
+        TextButton(
+          onPressed: () {
+            _authController.navigateToSignUp();
+          },
+          child: Text('SIGN UP'),
+        ),
+      ],
+    );
+
   }
 
   @override
