@@ -22,7 +22,7 @@ class AuthenticationView extends BaseStateless {
 
   @override
   Widget? buildBottomBar(BuildContext context) {
-    return BottomBar();
+    return null;
   }
 
   @override

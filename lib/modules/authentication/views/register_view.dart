@@ -36,6 +36,13 @@ class _RegisterViewState extends BaseStateful<RegisterView> {
           },
           child: const Text('login with google'),
         ),
+        TextButton(
+          onPressed: () async {
+            print('clicked');
+            await _authController.authWithApple(isSignUp: true);
+          },
+          child: const Text('login with apple'),
+        ),
       ],
     );
   }
