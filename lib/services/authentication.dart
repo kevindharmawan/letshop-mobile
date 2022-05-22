@@ -12,6 +12,8 @@ import 'package:letshop_mobile/utils/constants/firebase_error.dart';
 import 'package:letshop_mobile/utils/constants/storage_keys.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 
+import 'package:flutter/material.dart';
+
 class Authentication {
   final _signInKey = StorageKeys.isSignedIn;
 
@@ -158,14 +160,16 @@ class Authentication {
         ],
         nonce: _nonce,
       );
-
       return true;
-    } catch (e) {
+    } catch (e, s) {
+      print(e);
+      print(s);
       return false;
     }
   }
 
   Future<String> authWithApple(bool isSignUp) async {
+
     var errorMessage = FirebaseError.doesNotExist;
 
     try {
