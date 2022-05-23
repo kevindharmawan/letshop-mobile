@@ -3,7 +3,9 @@ import 'package:get/get.dart';
 import 'package:letshop_mobile/modules/authentication/authentication_controller.dart';
 import 'package:letshop_mobile/shared/appbars/empty_app_bar.dart';
 import 'package:letshop_mobile/shared/bases/base_stateful.dart';
-import 'package:flutter_signin_button/flutter_signin_button.dart';
+
+import 'package:letshop_mobile/utils/constants/font_size.dart';
+import 'package:letshop_mobile/utils/device/sizing.dart';
 
 class RegisterView extends StatefulWidget {
   @override
@@ -33,19 +35,49 @@ class _RegisterViewState extends BaseStateful<RegisterView> {
       child:Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SignInButton(
-            Buttons.Google,
-            text: "login with Google",
-            onPressed: () async {
-              await _authController.authWithGoogle(isSignUp: true);
-            },
+          Text(
+            'Welcome !',
+            style: TextStyle(fontSize: FontSize.heading3),
+            textAlign: TextAlign.left,
           ),
-          SignInButton(
-            Buttons.AppleDark,
-            text: "login with Apple",
-            onPressed: () async {
-              await _authController.authWithApple(isSignUp: true);
-            },
+          Container(
+            margin: EdgeInsets.all(4),
+            child: OutlinedButton.icon(
+              style: OutlinedButton.styleFrom(
+                  primary: Colors.black,
+                  fixedSize: Size(Sizing.w(300), Sizing.h(32))
+              ),
+              icon: Image.network('https://tantech.ie/stoagnuk/2022/03/google-logo-png-webinar-optimizing-for-success-google-business-webinar-13.png', width: 28, height: 28),
+              label: Text('Login with Google'),
+              onPressed: () async {
+                await _authController.authWithGoogle(isSignUp: true);
+              },
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.all(4),
+            child: OutlinedButton.icon(
+              style: OutlinedButton.styleFrom(
+                  primary: Colors.black,
+                  fixedSize: Size(Sizing.w(300), Sizing.h(32))
+              ),
+              icon: Icon(Icons.apple, size: 28, color: Colors.black),
+              label: Text('Login with Apple'),
+              onPressed: () async {
+                await _authController.authWithApple(isSignUp: true);
+              },
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(top: 16),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  primary: Colors.blueAccent,
+                  fixedSize: Size(Sizing.w(300), Sizing.h(28))
+              ),
+              child: Text('Login'),
+              onPressed: (){},
+            ),
           ),
         ],
       )

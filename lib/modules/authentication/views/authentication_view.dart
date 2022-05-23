@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:letshop_mobile/modules/authentication/authentication_controller.dart';
 import 'package:letshop_mobile/shared/appbars/empty_app_bar.dart';
 import 'package:letshop_mobile/shared/bases/base_stateless.dart';
-import 'package:letshop_mobile/shared/appbars/bottom_bar.dart';
 
 
 class AuthenticationView extends BaseStateless {
