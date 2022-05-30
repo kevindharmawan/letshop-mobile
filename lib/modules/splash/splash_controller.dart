@@ -17,6 +17,7 @@ class SplashController extends GetxController {
       await Future.delayed(const Duration(seconds: 1));
     }
 
+
     var _signedIn = await _storage.read(StorageKeys.isSignedIn);
 
     if (_signedIn != null && _signedIn) {
@@ -25,5 +26,8 @@ class SplashController extends GetxController {
     }
 
     Get.offNamed(AppRoutes.auth);
+
+    Get.offNamed(AppRoutes.home);
+
   }
 }

@@ -4,7 +4,6 @@ import 'package:letshop_mobile/models/review.dart';
 class Product {
   String? id;
   Store? store;
-  // TODO: category
   String? name;
   String? description;
   String? imageUrl;
@@ -24,4 +23,15 @@ class Product {
       this.price,
       this.stock,
       this.discount});
+
+  factory Product.fromJson(Map<String, dynamic> json) {
+    return Product(
+      id: json['id'].toString(),
+      name: json['name'],
+      description: json['description'],
+      price: json['price'],
+      stock: json['stock'],
+      discount: json['discount'],
+    );
+  }
 }
