@@ -4,7 +4,6 @@ import 'package:letshop_mobile/models/review.dart';
 class Product {
   String? id;
   Store? store;
-  // TODO: category
   String? name;
   String? description;
   String? imageUrl;

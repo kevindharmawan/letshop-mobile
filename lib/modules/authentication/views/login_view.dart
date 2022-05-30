@@ -37,6 +37,12 @@ class _LoginViewState extends BaseStateful<LoginView> {
           },
           child: const Text('login with google'),
         ),
+        TextButton(
+          onPressed: () async {
+            await _authController.authWithApple(isSignUp: false);
+          },
+          child: const Text('login with apple'),
+        ),
       ],
     );
   }

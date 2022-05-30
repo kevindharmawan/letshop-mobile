@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:letshop_mobile/shared/buttons/settings_button.dart';
+import 'package:letshop_mobile/utils/routes/_routes.dart';
+import 'package:get/get.dart';
 
 import 'package:letshop_mobile/utils/constants/font_size.dart';
 import 'package:letshop_mobile/utils/device/sizing.dart';
@@ -63,6 +65,7 @@ class AccountSettingsView extends StatelessWidget {
                   GestureDetector(
                     onTap: (){
                       print("Tapped User Settings");
+                      // pindah ke halaman user settings view
                     },
                     child: SettingsButton('User Settings'),
                   ),

@@ -7,6 +7,7 @@ import 'package:letshop_mobile/utils/device/sizing.dart';
 import 'package:letshop_mobile/utils/theme/theme_constant.dart';
 
 
+
 class UserSettingsView extends StatefulWidget{
   @override
   _UserSettingsView createState () => _UserSettingsView();

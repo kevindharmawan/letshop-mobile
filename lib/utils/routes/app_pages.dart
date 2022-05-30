@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:letshop_mobile/modules/authentication/_authentication.dart';
 import 'package:letshop_mobile/modules/home/_home.dart';
 import 'package:letshop_mobile/modules/home/home_binding.dart';
+import 'package:letshop_mobile/modules/settings/user_settings_view.dart';
 import 'package:letshop_mobile/modules/splash/_splash.dart';
 import '../../modules/settings/settings_view.dart';
 
