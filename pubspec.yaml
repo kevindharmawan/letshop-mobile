@@ -41,6 +41,8 @@ dependencies:
   get_storage: ^2.0.3
   google_sign_in: ^5.2.4
   sign_in_with_apple: ^3.3.0
+  image_picker: ^0.8.4+11
+
 
 dev_dependencies:
   flutter_test:
