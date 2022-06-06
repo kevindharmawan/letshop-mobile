@@ -13,7 +13,7 @@ class ApiProvider extends GetConnect {
 
   @override
   void onInit() async {
-    _token = await FirebaseAuth.instance.currentUser!.getIdToken(true);
+    _token = await FirebaseAuth.instance.currentUser?.getIdToken(true) ?? '';
 
     httpClient.baseUrl = _host;
     httpClient.defaultContentType = 'application/json';
