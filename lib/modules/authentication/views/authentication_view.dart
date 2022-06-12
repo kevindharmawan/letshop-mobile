@@ -14,9 +14,6 @@ import 'dart:async';
 
 import 'package:letshop_mobile/modules/home/home_controller.dart';
 
-
-
-
 import 'package:letshop_mobile/shared/appbars/empty_app_bar.dart';
 import 'package:letshop_mobile/shared/bases/base_stateless.dart';
 import 'package:letshop_mobile/shared/appbars/bottom_bar.dart';
@@ -27,8 +24,6 @@ import 'package:letshop_mobile/modules/settings/user_settings_view.dart';
 
 class AuthenticationView extends BaseStateless {
   AuthenticationView({Key? key}) : super(key: key);
-
-
 
   @override
   void init() {}
@@ -47,8 +42,6 @@ class AuthenticationView extends BaseStateless {
 
   @override
   Widget buildNarrow(BuildContext context) {
-
-
     return UserSettingsView();
   }
 

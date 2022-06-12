@@ -1,6 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:letshop_mobile/models/user.dart';
+import 'package:letshop_mobile/modules/authentication/_authentication.dart';
+import 'package:letshop_mobile/modules/home/_home.dart';
 import 'package:letshop_mobile/services/authentication.dart';
+import 'package:letshop_mobile/utils/constants/_constants.dart';
 import 'package:letshop_mobile/utils/routes/app_pages.dart';
 
 class AuthenticationController extends GetxController {
@@ -57,5 +61,10 @@ class AuthenticationController extends GetxController {
       var _result = await _authService.authWithApple(isSignUp);
       print(_result);
     }
+  }
+
+  Future signOut() async {
+    var _signOut = await _authService.signOut();
+    return _signOut;
   }
 }
