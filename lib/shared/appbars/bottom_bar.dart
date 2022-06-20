@@ -27,6 +27,7 @@ class _BottomBar extends State<BottomBar> {
         setState(() {
           currentIndex = index;
           if(currentIndex == 0) Get.offNamed(AppRoutes.home);
+          else if(currentIndex == 1) Get.offNamed(AppRoutes.productDetail);
           else if(currentIndex == 3) Get.offNamed(AppRoutes.settings);
         });
       },

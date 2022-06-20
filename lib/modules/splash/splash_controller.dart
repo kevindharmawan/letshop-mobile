@@ -24,6 +24,7 @@ class SplashController extends GetxController {
       return;
     }
 
-    Get.offNamed(AppRoutes.auth);
+    Get.offNamed(AppRoutes.home);
+    // Get.offNamed(AppRoutes.auth);
   }
 }

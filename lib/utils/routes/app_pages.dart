@@ -5,6 +5,7 @@ import 'package:letshop_mobile/modules/home/home_binding.dart';
 import 'package:letshop_mobile/modules/settings/user_settings_view.dart';
 import 'package:letshop_mobile/modules/splash/_splash.dart';
 import '../../modules/settings/settings_view.dart';
+import 'package:letshop_mobile/modules/authentication/views/product_detail_view.dart';
 
 part 'app_routes.dart';
 
@@ -44,6 +45,10 @@ class AppPages {
     GetPage(
       name: AppRoutes.settings,
       page: () => const SettingsView(),
+    ),
+    GetPage(
+      name: AppRoutes.productDetail,
+      page: () => ProductDetailView(),
     ),
   ];
 }

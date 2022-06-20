@@ -27,7 +27,6 @@ class AuthenticationView extends BaseStateless {
   @override
   Widget buildNarrow(BuildContext context) {
     return Column(
-
       children: [
         Text(
           'example'.tr,

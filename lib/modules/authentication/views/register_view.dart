@@ -47,7 +47,7 @@ class _RegisterViewState extends BaseStateful<RegisterView> {
                   primary: Colors.black,
                   fixedSize: Size(Sizing.w(300), Sizing.h(32))
               ),
-              icon: Image.network('https://tantech.ie/stoagnuk/2022/03/google-logo-png-webinar-optimizing-for-success-google-business-webinar-13.png', width: 28, height: 28),
+              icon: Image.network('https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2048px-Google_%22G%22_Logo.svg.png', width: 20, height: 20),
               label: Text('Login with Google'),
               onPressed: () async {
                 await _authController.authWithGoogle(isSignUp: true);
