@@ -18,7 +18,6 @@ class AuthenticationController extends GetxController {
   void onInit() {
     super.onInit();
     _authService = Authentication();
-
     emailController = TextEditingController();
     passwordController = TextEditingController();
     passwordConfirmController = TextEditingController();
@@ -61,6 +60,21 @@ class AuthenticationController extends GetxController {
       var _result = await _authService.authWithApple(isSignUp);
       print(_result);
     }
+  }
+
+  Future<void> signUpWithEmailAndPassword() async {
+    var _email = emailController.text;
+    var _password = passwordController.text;
+    var _passwordConfirm = passwordConfirmController.text;
+    var _result = await _authService.signUp(_email, _password);
+    print(_result);
+  }
+
+  Future<void> signInWithEmailAndPassword() async {
+    var _email = emailController.text;
+    var _password = passwordController.text;
+    var _result = await _authService.signIn(_email, _password);
+    print(_result);
   }
 
   Future signOut() async {

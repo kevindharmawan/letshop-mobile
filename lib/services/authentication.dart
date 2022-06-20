@@ -67,7 +67,6 @@ class Authentication {
 
   Future<String> signOut() async {
     var errorMessage = FirebaseError.doesNotExist;
-
     try {
       Get.dialog(const Loading());
       await _firebase.signOut();

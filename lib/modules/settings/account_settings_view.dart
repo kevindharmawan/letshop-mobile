@@ -18,7 +18,7 @@ class AccountSettingsView extends BaseStateless {
 
   IconData logout = IconData(0xe3b3, fontFamily: 'MaterialIcons');
 
-  final _authController = Get.find<AuthenticationController>(); // masih belom tau
+  get _authController => Get.put(AuthenticationController());
 
   @override
   void init() {}
@@ -145,7 +145,8 @@ class AccountSettingsView extends BaseStateless {
                   GestureDetector(
                       onTap: () async {
                         print("Tapped Logout");
-                        await _authController.signOut(); // belom tau
+                        Get.offNamed(AppRoutes.auth);
+                        await _authController.signOut();
                       },
                       child: Container(
                           decoration: const BoxDecoration(
