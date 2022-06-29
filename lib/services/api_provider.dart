@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:get/get_connect/http/src/request/request.dart';
 import 'package:letshop_mobile/models/product.dart';
+import 'package:letshop_mobile/models/review.dart';
 import 'package:letshop_mobile/models/category.dart';
 
 class ApiProvider extends GetConnect {
@@ -86,4 +87,61 @@ class ApiProvider extends GetConnect {
     ];
     return categories;
   }
+
+  Future<Product> getProduct() async {
+    Product product = Product(
+      id: '1',
+      name: 'Product 1',
+      price: 100000,
+      imageUrl: 'https://picsum.photos/200/300',
+    );
+    return product;
+  }
+
+  Future<List<Review>> getReview() async {
+    List<Review> reviews = [
+      Review(
+        id: '1',
+        username: 'username 1',
+        content: 'review content - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+        rate: 5,
+        date: DateTime.utc(2022, 3, 9),
+        profilePicture: 'https://picsum.photos/200/300'
+      ),
+      Review(
+          id: '2',
+          username: 'username 2',
+          content: 'review content - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+          rate: 4,
+          date: DateTime.utc(2022, 5, 9),
+          profilePicture: 'https://picsum.photos/200/300'
+      ),
+      Review(
+          id: '3',
+          username: 'username 3',
+          content: 'review content - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+          rate: 2,
+          date: DateTime.utc(2021, 3, 1),
+          profilePicture: 'https://picsum.photos/200/300'
+      ),
+      Review(
+          id: '4',
+          username: 'username 2',
+          content: 'review content - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+          rate: 4,
+          date: DateTime.utc(2022, 4, 19),
+          profilePicture: 'https://picsum.photos/200/300'
+      ),
+      Review(
+          id: '5',
+          username: 'username 5',
+          content: 'review content - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+          rate: 3,
+          date: DateTime.utc(2022, 2, 9),
+          profilePicture: 'https://picsum.photos/200/300'
+      )
+    ];
+    return reviews;
+  }
+
 }

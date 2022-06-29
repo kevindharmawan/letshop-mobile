@@ -12,7 +12,9 @@ class AppRoutes {
   static const home = '/home';
 
   static const settings = '/settings';
+
   static const productDetail = '/productDetail';
+  static const allReview = '/allReview';
 
   static const userSettings = '/userSettings';
   static const accountSettings = '/accountSettings';

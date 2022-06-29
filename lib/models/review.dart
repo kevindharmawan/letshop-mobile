@@ -5,14 +5,17 @@ class Review {
   String? content;
   int? rate;
   DateTime? date;
+  String? profilePicture;
 
-  Review(
-      {this.id,
-        this.username,
-        this.productId,
-        this.content,
-        this.rate,
-        this.date});
+  Review({
+    this.id,
+      this.username,
+      this.productId,
+      this.content,
+      this.rate,
+      this.date,
+      this.profilePicture
+  });
 
   factory Review.fromJson(Map<String, dynamic> json) {
     return Review(
@@ -22,6 +25,7 @@ class Review {
       content: json['content'].toString(),
       rate: json['rate'],
       date: json['date'],
+      profilePicture: json['profilePicture'].toString(),
     );
   }
 }

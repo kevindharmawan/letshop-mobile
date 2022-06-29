@@ -30,8 +30,7 @@ class AccountSettingsView extends BaseStateless {
 
   @override
   Widget? buildBottomBar(BuildContext context) {
-    // TODO: implement buildBottomBar
-    return BottomBar();
+    return null;
   }
 
   @override

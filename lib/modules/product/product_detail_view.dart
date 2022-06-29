@@ -1,15 +1,22 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:letshop_mobile/shared/appbars/empty_app_bar.dart';
 import 'package:letshop_mobile/shared/appbars/bottom_bar.dart';
+import 'package:letshop_mobile/shared/cards/review_card.dart';
 import '../../../shared/bases/base_stateless.dart';
 import 'package:letshop_mobile/utils/device/sizing.dart';
 import 'package:letshop_mobile/utils/constants/font_size.dart';
-import 'package:letshop_mobile/modules/authentication/views/product_review.dart';
+import 'package:letshop_mobile/modules/product/product_detail_controller.dart';
+import 'package:letshop_mobile/utils/routes/_routes.dart';
+import '../../models/review.dart';
 
 class ProductDetailView extends BaseStateless{
 
-  const ProductDetailView({Key? key}) : super(key: key);
+  ProductDetailView({Key? key}) : super(key: key);
+
+  get _reviewController => Get.put(ProductDetailController());
 
   @override
   void init() {}
@@ -26,6 +33,7 @@ class ProductDetailView extends BaseStateless{
 
   @override
   Widget buildNarrow(BuildContext context) {
+    double averageRate = 0;
     return Container(
       margin: EdgeInsets.symmetric(
         horizontal: Sizing.w(20),
@@ -92,11 +100,62 @@ class ProductDetailView extends BaseStateless{
               ),
             ),
           ),
-          ProductReview(),
           Container(
+            padding: EdgeInsets.only(top: Sizing.h(18), bottom: Sizing.h(8)),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text("Review", style: TextStyle(fontSize: FontSize.subheading, fontWeight: FontWeight.bold)),
+                    Row(
+                        children: [
+                          Container(
+                              height: Sizing.w(16),
+                              width: Sizing.w(16),
+                              margin: EdgeInsets.only(right: Sizing.w(6)),
+                              child: Image(image: NetworkImage('https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Star_icon_stylized.svg/1077px-Star_icon_stylized.svg.png'))
+                          ),
+                          Text('${averageRate}', style: TextStyle(fontSize: FontSize.bodyLarge))
+                        ]
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          Container(
+            height: Sizing.h(240),
+            child: FutureBuilder(
+              builder: (BuildContext context, AsyncSnapshot<List<Review>> snapshot) {
+                if (snapshot.connectionState == ConnectionState.done && snapshot.hasData) {
+                  var reviews = snapshot.data as List<Review>;
+                  return ListView.builder(
+                    scrollDirection: Axis.vertical,
+                    itemCount: reviews.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      averageRate = averageRate + (reviews[index].rate!/reviews.length);
+                      print(averageRate);
+                      return ReviewCard(review: reviews[index],);
+                    },
+                  );
+                }
+                if (snapshot.connectionState == ConnectionState.done && snapshot.hasError){
+                  return Text("Error!!!");
+                }
+                return Text("Loading!!!");
+              },
+              future: _reviewController.getReview(),
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(top: Sizing.h(12)),
             child: OutlinedButton(
               child: Text("See All Review", style: TextStyle(color: Colors.black),),
-              onPressed: null,
+              onPressed: (){
+                Get.offNamed(AppRoutes.allReview);
+              },
               style: OutlinedButton.styleFrom(
                 side: BorderSide(color: Colors.black),
               ),

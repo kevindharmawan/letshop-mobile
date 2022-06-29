@@ -6,7 +6,8 @@ import 'package:letshop_mobile/modules/splash/_splash.dart';
 import 'package:letshop_mobile/modules/settings/user_settings_view.dart';
 import 'package:letshop_mobile/modules/settings/account_settings_view.dart';
 import 'package:letshop_mobile/modules/settings/settings_view.dart';
-import 'package:letshop_mobile/modules/authentication/views/product_detail_view.dart';
+import 'package:letshop_mobile/modules/product/product_detail_view.dart';
+import 'package:letshop_mobile/modules/product/see_all_review.dart';
 import '../../modules/home/see_all_category.dart';
 import '../../modules/home/see_all_recommended.dart';
 
@@ -68,6 +69,10 @@ class AppPages {
     GetPage(
       name: AppRoutes.productDetail,
       page: () => ProductDetailView(),
+    ),
+    GetPage(
+      name: AppRoutes.allReview,
+      page: () => AllReview(),
     ),
   ];
 }

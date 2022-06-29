@@ -7,7 +7,7 @@ class User {
   String? password;
   String? phoneNumber;
   String? dOB;
-  Image? profilePicture;
+  String? profilePicture;
   String? gender;
 
   User({
@@ -20,4 +20,13 @@ class User {
     this.profilePicture,
     this.gender
   });
+
+  factory User.fromJson(Map<String, dynamic> json) {
+    return User(
+      username: json['username'].toString(),
+      name: json['name'].toString(),
+      email: json['email'].toString(),
+      profilePicture: json['profilePicture'].toString(),
+    );
+  }
 }
