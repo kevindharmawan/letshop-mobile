@@ -4,14 +4,16 @@ import 'package:flutter/painting.dart';
 import 'package:letshop_mobile/models/review.dart';
 import 'package:letshop_mobile/utils/constants/font_size.dart';
 import 'package:letshop_mobile/utils/device/sizing.dart';
+import '../../models/user.dart';
 
 class ReviewCard extends StatelessWidget {
 
   // final Review review;
+  // final User user;
   //
   // const ReviewCard({
   //   Key? key,
-  //   required this.review,
+  //   required this.review, required this.user,
   // }) : super(key: key);
 
   @override
